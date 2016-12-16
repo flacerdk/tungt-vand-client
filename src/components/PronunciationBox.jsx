@@ -12,7 +12,7 @@ export default function PronunciationBox(props) {
   }
   let pronunciations = null
   if (props.pronunciations.length > 0) {
-    const items = props.pronunciations.map(e => {
+    const items = props.pronunciations.map((e) => {
       const audio = (<AudioButton link={e.audio} />)
       return (
         <li>
@@ -21,9 +21,9 @@ export default function PronunciationBox(props) {
       )
     })
     pronunciations = (
-        <ul className="list-inline">
-          {items}
-        </ul>
+      <ul className="list-inline">
+        {items}
+      </ul>
     )
   }
   return (
@@ -32,4 +32,14 @@ export default function PronunciationBox(props) {
       {inflection}
     </div>
   )
+}
+
+PronunciationBox.propTypes = {
+  inflection: React.PropTypes.string,
+  pronunciations: React.PropTypes.arrayOf(React.PropTypes.object),
+}
+
+PronunciationBox.defaultProps = {
+  inflection: '',
+  pronunciations: [],
 }

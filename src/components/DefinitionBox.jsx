@@ -43,3 +43,8 @@ export default function DefinitionBox(props) {
 
   return definitions
 }
+
+DefinitionBox.propTypes = {
+  definitions: React.PropTypes.arrayOf(React.PropTypes.object),
+  header: React.PropTypes.string,
+}

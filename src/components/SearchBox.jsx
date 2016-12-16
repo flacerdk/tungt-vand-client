@@ -3,7 +3,7 @@ import { Button, FormControl, FormGroup } from 'react-bootstrap/lib'
 
 export default function SearchBox(props) {
   return (
-    <div class="search-box">
+    <div className="search-box">
       <form action="" onSubmit={props.handleSubmit}>
         <FormGroup>
           <FormControl
@@ -17,4 +17,10 @@ export default function SearchBox(props) {
       </form>
     </div>
   )
+}
+
+SearchBox.propTypes = {
+  handleSubmit: React.PropTypes.func,
+  handleChange: React.PropTypes.func,
+  query: React.PropTypes.string,
 }

@@ -21,3 +21,7 @@ export default class AudioButton extends React.Component {
     )
   }
 }
+
+AudioButton.propTypes = {
+  link: React.PropTypes.string,
+}

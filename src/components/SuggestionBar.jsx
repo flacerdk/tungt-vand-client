@@ -18,3 +18,8 @@ export default function SuggestionBar(props) {
   }
   return suggestionList
 }
+
+SuggestionBar.propTypes = {
+  suggestions: React.PropTypes.arrayOf(React.PropTypes.object),
+  onClick: React.PropTypes.func,
+}
