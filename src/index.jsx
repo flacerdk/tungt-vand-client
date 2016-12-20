@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Grid, Col } from 'react-bootstrap/lib'
+import { Grid, Col, Row } from 'react-bootstrap/lib'
 import fetchAndParse from './utils/parse-dict-entry'
 import MainPage from './components/MainPage'
 import PronunciationBox from './components/PronunciationBox'
@@ -86,16 +86,16 @@ class Page extends React.Component {
     }
     return (
       <Grid fluid>
-        <Col xs={8}>
-          {leftColumn}
-        </Col>
-        <Col xs={4}>
+        <Col xs={12} md={4} mdPush={8}>
           <SearchBox
             handleChange={this.handleChange}
             query={this.state.query}
             handleSubmit={this.handleSubmit}
           />
           {suggestions}
+        </Col>
+        <Col xs={12} md={8} mdPull={4}>
+          {leftColumn}
         </Col>
       </Grid>
     )

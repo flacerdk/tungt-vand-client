@@ -4,16 +4,16 @@ import { Button, Form, FormControl, FormGroup } from 'react-bootstrap/lib'
 export default function SearchBox(props) {
   return (
     <div className="search-box">
-      <Form inline action="" onSubmit={props.handleSubmit}>
+      <Form action="" onSubmit={props.handleSubmit}>
         <FormGroup>
           <FormControl
             type="text"
             value={props.query}
             onChange={props.handleChange}
-            placeholder="Slå op"
+            placeholder="Begreb..."
           />
         </FormGroup>
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Slå op</Button>
       </Form>
     </div>
   )
