@@ -29,7 +29,7 @@ export default function PronunciationBox(props) {
     )
   }
   return (
-    <div id="pronunciation">
+    <div className="pronunciation">
       {pronunciations}
     </div>
   )

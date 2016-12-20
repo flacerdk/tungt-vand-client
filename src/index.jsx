@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Grid, Col, Row } from 'react-bootstrap/lib'
+import { Grid, Col } from 'react-bootstrap/lib'
 import fetchAndParse from './utils/parse-dict-entry'
 import MainPage from './components/MainPage'
 import PronunciationBox from './components/PronunciationBox'
