@@ -1,10 +1,10 @@
 import React from 'react'
-import { Button, FormControl, FormGroup } from 'react-bootstrap/lib'
+import { Button, Form, FormControl, FormGroup } from 'react-bootstrap/lib'
 
 export default function SearchBox(props) {
   return (
     <div className="search-box">
-      <form action="" onSubmit={props.handleSubmit}>
+      <Form inline action="" onSubmit={props.handleSubmit}>
         <FormGroup>
           <FormControl
             type="text"
@@ -14,7 +14,7 @@ export default function SearchBox(props) {
           />
         </FormGroup>
         <Button type="submit">Submit</Button>
-      </form>
+      </Form>
     </div>
   )
 }

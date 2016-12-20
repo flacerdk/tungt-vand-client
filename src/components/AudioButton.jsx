@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap/lib'
 
 export default class AudioButton extends React.Component {
   constructor(props) {
@@ -7,16 +8,23 @@ export default class AudioButton extends React.Component {
   }
 
   handleClick() {
+    this.audio.load()
     this.audio.play()
   }
 
   render() {
     return (
-      <div className="audio">
+      <div className="transcription">
         <audio ref={(audio) => { this.audio = audio }}>
           <source src={this.props.link} type="audio/mp3" />
         </audio>
-        <button onClick={this.handleClick}>Play!</button>
+        <Button
+          bsStyle="primary"
+          bsSize="small"
+          onClick={this.handleClick}
+        >
+          {this.props.transcription}
+        </Button>
       </div>
     )
   }
@@ -24,4 +32,5 @@ export default class AudioButton extends React.Component {
 
 AudioButton.propTypes = {
   link: React.PropTypes.string,
+  transcription: React.PropTypes.string,
 }

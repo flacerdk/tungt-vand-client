@@ -7,9 +7,14 @@ import PronunciationBox from './components/PronunciationBox'
 import DefinitionBox from './components/DefinitionBox'
 import SearchBox from './components/SearchBox'
 import SuggestionBar from './components/SuggestionBar'
+import Title from './components/Title'
 
 function renderEntry(entry) {
-  const title = (<h1>{entry.title.title}</h1>)
+  const title = (
+    <Title
+      title={entry.title.title}
+      inflection={entry.inflection}
+    />)
   const pronunciationBox = (
     <PronunciationBox
       inflection={entry.inflection}
@@ -29,9 +34,11 @@ function renderEntry(entry) {
   return (
     <div>
       {title}
-      {pronunciationBox}
-      {definitions}
-      {fasteUdtryk}
+      <div className="definition-column">
+        {pronunciationBox}
+        {definitions}
+        {fasteUdtryk}
+      </div>
     </div>
   )
 }
@@ -54,7 +61,6 @@ class Page extends React.Component {
   }
 
   handleChooseItem(link) {
-    console.log(link)
     fetchAndParse(link)
       .then(r => this.setState({ data: JSON.parse(r), query: '' }))
   }
