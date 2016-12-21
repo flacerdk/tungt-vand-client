@@ -63,12 +63,15 @@ class Page extends React.Component {
   handleChooseItem(link) {
     fetchAndParse(link)
       .then(r => this.setState({ data: JSON.parse(r), query: '' }))
+      .catch(() => {
+        console.log('No such term')
+        this.setState({ query: '' })
+      })
   }
 
   handleSubmit(event) {
     event.preventDefault()
-    fetchAndParse({ query: this.state.query })
-      .then(r => this.setState({ data: JSON.parse(r), query: '' }))
+    this.handleChooseItem({ query: this.state.query })
   }
 
   render() {
