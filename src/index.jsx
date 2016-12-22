@@ -8,6 +8,7 @@ import DefinitionBox from './components/DefinitionBox'
 import SearchBox from './components/SearchBox'
 import SuggestionBar from './components/SuggestionBar'
 import Title from './components/Title'
+import ErrorPage from './components/ErrorPage'
 
 function renderEntry(entry) {
   const title = (
@@ -49,6 +50,7 @@ class Page extends React.Component {
     this.state = {
       data: {},
       query: '',
+      error: false,
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -62,10 +64,9 @@ class Page extends React.Component {
 
   handleChooseItem(link) {
     fetchAndParse(link)
-      .then(r => this.setState({ data: JSON.parse(r), query: '' }))
+      .then(r => this.setState({ data: JSON.parse(r), query: '', error: false }))
       .catch(() => {
-        console.log('No such term')
-        this.setState({ query: '' })
+        this.setState({ query: '', error: true })
       })
   }
 
@@ -77,7 +78,9 @@ class Page extends React.Component {
   render() {
     let leftColumn
     let suggestions = ''
-    if (Object.keys(this.state.data).length > 0) {
+    if (this.state.error) {
+      leftColumn = (<ErrorPage />)
+    } else if (Object.keys(this.state.data).length > 0) {
       leftColumn = renderEntry(this.state.data)
       suggestions = (
         <SuggestionBar
