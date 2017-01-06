@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap/lib'
+import styles from '../stylesheets/entry.css'
 
 export default class AudioButton extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ export default class AudioButton extends React.Component {
 
   render() {
     return (
-      <div className="transcription">
+      <div className={styles.transcription}>
         <audio ref={(audio) => { this.audio = audio }}>
           <source src={this.props.link} type="audio/mp3" />
         </audio>

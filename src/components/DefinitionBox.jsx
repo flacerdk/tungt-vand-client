@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from '../stylesheets/entry.css'
 
 function buildExampleList(items, header, renderFunction) {
   let exampleList = null
@@ -6,10 +7,10 @@ function buildExampleList(items, header, renderFunction) {
     const exampleItems = items.map(renderFunction)
     exampleList = (
       <div className="examples">
-        <div className="entry-header">
+        <div className={styles.entryHeader}>
           {header}
         </div>
-        <div className="example-list">
+        <div className={styles.exampleList}>
           {exampleItems}
         </div>
       </div>
@@ -22,14 +23,14 @@ export default function DefinitionBox(props) {
   let definitions = null
   if (props.definitions.length > 0) {
     const items = props.definitions.map((e) => {
-      const grammar = buildExampleList(e.grammar, 'Grammar', g => (<div className="example">{g}</div>))
-      const examples = buildExampleList(e.examples, 'Examples', g => (<div className="example">{g}</div>))
-      const synonyms = buildExampleList(e.synonyms, 'Synonyms', g => (<div className="example">{g.text}</div>))
-      const quotes = buildExampleList(e.quotes, 'Quotes', g => (<div className="example">{g}</div>))
+      const grammar = buildExampleList(e.grammar, 'Grammar', g => (<div className={styles.example}>{g}</div>))
+      const examples = buildExampleList(e.examples, 'Examples', g => (<div className={styles.example}>{g}</div>))
+      const synonyms = buildExampleList(e.synonyms, 'Synonyms', g => (<div className={styles.example}>{g.text}</div>))
+      const quotes = buildExampleList(e.quotes, 'Quotes', g => (<div className={styles.example}>{g}</div>))
 
       return (
-        <div className="definition">
-          <div className="entry-definition">
+        <div className={styles.definition}>
+          <div className={styles.entryDefinition}>
             {e.definition}
           </div>
 
@@ -42,7 +43,7 @@ export default function DefinitionBox(props) {
     })
     definitions = (
       <div className="definition-panel">
-        <div className="header">
+        <div className={styles.header}>
           {props.header}
         </div>
         {items}

@@ -21,6 +21,10 @@ module.exports = {
         include: BUILD_DIR,
         loader: 'babel',
       },
+      {
+        test: /\.css$/,
+        loader: 'style!css?modules=true&camelCase=true',
+      },
     ],
   },
   plugins: [

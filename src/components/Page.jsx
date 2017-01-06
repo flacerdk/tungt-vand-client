@@ -10,6 +10,7 @@ import SuggestionBar from './SuggestionBar'
 import Title from './Title'
 import ErrorPage from './ErrorPage'
 
+import styles from '../stylesheets/entry.css'
 
 function renderEntry(entry) {
   const title = (
@@ -36,7 +37,7 @@ function renderEntry(entry) {
   return (
     <div>
       {title}
-      <div className="definition-column">
+      <div className={styles.definitionColumn}>
         {pronunciationBox}
         {definitions}
         {fasteUdtryk}
