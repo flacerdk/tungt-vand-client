@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button } from 'react-bootstrap/lib'
 import AudioButton from './AudioButton'
-import styles from '../stylesheets/entry.css'
+
+require('../stylesheets/PronunciationBox.scss')
 
 export default function PronunciationBox(props) {
   let pronunciations = ''
@@ -12,13 +13,13 @@ export default function PronunciationBox(props) {
           transcription={e.transcription}
           link={e.audio}
         />) : (
-          <div className={styles.transcription}>
+          <div className="transcription">
             <Button>{e.transcription}</Button>
           </div>
         )
       return (
-        <li className={styles.pronunciationKey}>
-          <div className={styles.details}>{e.details}</div>
+        <li className="pronunciation-key">
+          <div className="details">{e.details}</div>
           {pronunciationKey}
         </li>
       )
@@ -30,7 +31,7 @@ export default function PronunciationBox(props) {
     )
   }
   return (
-    <div className={styles.pronuncation}>
+    <div className="pronunciation">
       {pronunciations}
     </div>
   )

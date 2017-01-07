@@ -1,10 +1,11 @@
 import React from 'react'
 import { Button, Form, FormControl, FormGroup } from 'react-bootstrap/lib'
-import styles from '../stylesheets/entry.css'
+
+require('../stylesheets/SearchBox.scss')
 
 export default function SearchBox(props) {
   return (
-    <div className={styles.searchBox}>
+    <div className="search-box">
       <Form action="" onSubmit={props.handleSubmit}>
         <FormGroup>
           <FormControl

@@ -1,12 +1,13 @@
 import React from 'react'
-import styles from '../stylesheets/entry.css'
+
+require('../stylesheets/Title.scss')
 
 export default function Title({ title, inflection }) {
   const inflectionElement =
-    inflection ? (<span className={styles.inflection}>({inflection})</span>) : null
+    inflection ? (<span className="inflection">({inflection})</span>) : null
   return (
-    <div className={styles.definitionHeader}>
-      <div className={styles.title}>
+    <div className="definition-header">
+      <div className="title">
         {title}
         {inflectionElement}
       </div>

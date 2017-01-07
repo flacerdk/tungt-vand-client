@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from 'react-bootstrap/lib'
-import styles from '../stylesheets/entry.css'
+
+require('../stylesheets/PronunciationBox.scss')
 
 export default class AudioButton extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ export default class AudioButton extends React.Component {
 
   render() {
     return (
-      <div className={styles.transcription}>
+      <div className="transcription">
         <audio ref={(audio) => { this.audio = audio }}>
           <source src={this.props.link} type="audio/mp3" />
         </audio>

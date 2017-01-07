@@ -1,6 +1,6 @@
 import React from 'react'
-
 import { Grid, Col } from 'react-bootstrap/lib'
+
 import fetchAndParse from '../utils/parse-dict-entry'
 import MainPage from './MainPage'
 import PronunciationBox from './PronunciationBox'
@@ -10,7 +10,7 @@ import SuggestionBar from './SuggestionBar'
 import Title from './Title'
 import ErrorPage from './ErrorPage'
 
-import styles from '../stylesheets/entry.css'
+require('../stylesheets/Page.scss')
 
 function renderEntry(entry) {
   const title = (
@@ -37,7 +37,7 @@ function renderEntry(entry) {
   return (
     <div>
       {title}
-      <div className={styles.definitionColumn}>
+      <div className="definition-column">
         {pronunciationBox}
         {definitions}
         {fasteUdtryk}

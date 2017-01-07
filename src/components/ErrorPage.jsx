@@ -1,6 +1,7 @@
 import React from 'react'
-
 import { Panel } from 'react-bootstrap/lib'
+
+require('../stylesheets/ErrorPage.scss')
 
 export default function ErrorPage() {
   const title = (<h1>Ingen resultater!</h1>)

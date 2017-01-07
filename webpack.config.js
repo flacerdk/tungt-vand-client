@@ -23,7 +23,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css?modules=true&camelCase=true',
+        loader: 'style!css',
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass',
       },
     ],
   },
