@@ -6,7 +6,7 @@ require('../stylesheets/PronunciationBox.scss')
 export default function PronunciationBox(props) {
   let pronunciations = ''
   if (props.pronunciations.length > 0) {
-    const items = props.pronunciations.map((e) => {
+    pronunciations = props.pronunciations.map((e) => {
       const pronunciationKey = e.audio ? (
         <AudioButton
           transcription={e.transcription}
@@ -23,16 +23,11 @@ export default function PronunciationBox(props) {
         </li>
       )
     })
-    pronunciations = (
-      <ul className="list-inline">
-        {items}
-      </ul>
-    )
   }
   return (
-    <div className="pronunciation">
+    <ul className="pronunciations">
       {pronunciations}
-    </div>
+    </ul>
   )
 }
 

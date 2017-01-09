@@ -1,0 +1,13 @@
+@import "mediaSizes";
+
+.suggestions {
+    display: flex;
+    @media (min-width: $screen-sm-min) {
+        flex-direction: column;
+    }
+    @media (max-width: $screen-sm-min) {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 10px;
+    }
+}

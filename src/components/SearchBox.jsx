@@ -4,17 +4,15 @@ require('../stylesheets/SearchBox.scss')
 
 export default function SearchBox(props) {
   return (
-    <div className="search-box">
-      <form action="" onSubmit={props.handleSubmit}>
-          <input
-            type="text"
-            value={props.query}
-            onChange={props.handleChange}
-            placeholder="Begreb..."
-          />
-        <button type="submit">Slå op</button>
-      </form>
-    </div>
+    <form className="search-box" action="" onSubmit={props.handleSubmit}>
+      <input
+        type="text"
+        value={props.query}
+        onChange={props.handleChange}
+        placeholder="Begreb..."
+      />
+      <button type="submit">Slå op</button>
+    </form>
   )
 }
 

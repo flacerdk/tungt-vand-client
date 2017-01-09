@@ -1,5 +1,7 @@
 import React from 'react'
 
+require('../stylesheets/SuggestionBar.scss')
+
 export default function SuggestionBar(props) {
   let suggestionList = null
   if (props.suggestions.length > 0) {
@@ -10,9 +12,9 @@ export default function SuggestionBar(props) {
       )
     })
     suggestionList = (
-      <ul>
+      <div className="suggestions">
         {items}
-      </ul>
+      </div>
     )
   }
   return suggestionList

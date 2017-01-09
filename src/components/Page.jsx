@@ -92,17 +92,17 @@ export default class Page extends React.Component {
       leftColumn = (<MainPage />)
     }
     return (
-      <div>
-        <div>
+      <div className="row">
+        <div className="column">
+          {leftColumn}
+        </div>
+        <div className="column">
           <SearchBox
             handleChange={this.handleChange}
             query={this.state.query}
             handleSubmit={this.handleSubmit}
           />
           {suggestions}
-        </div>
-        <div>
-          {leftColumn}
         </div>
       </div>
     )

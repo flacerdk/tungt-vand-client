@@ -1,4 +1,18 @@
+@import "colors";
+@import "mediaSizes";
+
 .search-box {
     padding: 20px 0;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    input {
+        border-radius: .25rem;
+        border: 1px solid lighten($iron, 20%);
+        flex: 2;
+    }
+    button {
+        margin-left: 5px;
+        flex: 1;
+    }
 }
