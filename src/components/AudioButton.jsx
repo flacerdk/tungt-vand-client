@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from 'react-bootstrap/lib'
 
 require('../stylesheets/PronunciationBox.scss')
 
@@ -20,13 +19,11 @@ export default class AudioButton extends React.Component {
         <audio ref={(audio) => { this.audio = audio }}>
           <source src={this.props.link} type="audio/mp3" />
         </audio>
-        <Button
-          bsStyle="primary"
-          bsSize="small"
+        <button
           onClick={this.handleClick}
         >
           {this.props.transcription}
-        </Button>
+        </button>
       </div>
     )
   }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Grid, Col } from 'react-bootstrap/lib'
 
 import fetchAndParse from '../utils/parse-dict-entry'
 import MainPage from './MainPage'
@@ -37,7 +36,7 @@ function renderEntry(entry) {
   return (
     <div>
       {title}
-      <div className="definition-column">
+      <div className="entry-column">
         {pronunciationBox}
         {definitions}
         {fasteUdtryk}
@@ -93,19 +92,19 @@ export default class Page extends React.Component {
       leftColumn = (<MainPage />)
     }
     return (
-      <Grid fluid>
-        <Col xs={12} md={4} mdPush={8}>
+      <div>
+        <div>
           <SearchBox
             handleChange={this.handleChange}
             query={this.state.query}
             handleSubmit={this.handleSubmit}
           />
           {suggestions}
-        </Col>
-        <Col xs={12} md={8} mdPull={4}>
+        </div>
+        <div>
           {leftColumn}
-        </Col>
-      </Grid>
+        </div>
+      </div>
     )
   }
 }

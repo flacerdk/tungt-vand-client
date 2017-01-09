@@ -1,4 +1,4 @@
-.entry-header {
+.example-header {
     background-color: #dddddd;
     color: #0074d9;
     padding: 2px 5px;
@@ -7,13 +7,14 @@
 
 .example-list {
     padding: 5px 5px;
+
+    .example {
+        display: inline;
+        padding: 0 10px;
+        border-left: 1px solid #000000;
+    }
 }
 
-.example {
-    display: inline;
-    padding: 0 10px;
-    border-left: 1px solid #000000;
-}
 
 .example:first-child {
     border-left: 0;

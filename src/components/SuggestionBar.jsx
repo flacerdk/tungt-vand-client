@@ -1,5 +1,4 @@
 import React from 'react'
-import { ListGroup, ListGroupItem } from 'react-bootstrap/lib'
 
 export default function SuggestionBar(props) {
   let suggestionList = null
@@ -7,13 +6,13 @@ export default function SuggestionBar(props) {
     const items = props.suggestions.map((e, i) => {
       const onClick = props.onClick.bind(null, e.link)
       return (
-        <ListGroupItem key={i} onClick={onClick}>{e.text}</ListGroupItem>
+        <button key={i} onClick={onClick}>{e.text}</button>
       )
     })
     suggestionList = (
-      <ListGroup>
+      <ul>
         {items}
-      </ListGroup>
+      </ul>
     )
   }
   return suggestionList

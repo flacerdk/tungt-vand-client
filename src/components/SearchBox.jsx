@@ -1,22 +1,19 @@
 import React from 'react'
-import { Button, Form, FormControl, FormGroup } from 'react-bootstrap/lib'
 
 require('../stylesheets/SearchBox.scss')
 
 export default function SearchBox(props) {
   return (
     <div className="search-box">
-      <Form action="" onSubmit={props.handleSubmit}>
-        <FormGroup>
-          <FormControl
+      <form action="" onSubmit={props.handleSubmit}>
+          <input
             type="text"
             value={props.query}
             onChange={props.handleChange}
             placeholder="Begreb..."
           />
-        </FormGroup>
-        <Button type="submit">Slå op</Button>
-      </Form>
+        <button type="submit">Slå op</button>
+      </form>
     </div>
   )
 }

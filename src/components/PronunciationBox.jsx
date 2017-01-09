@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from 'react-bootstrap/lib'
 import AudioButton from './AudioButton'
 
 require('../stylesheets/PronunciationBox.scss')
@@ -14,7 +13,7 @@ export default function PronunciationBox(props) {
           link={e.audio}
         />) : (
           <div className="transcription">
-            <Button>{e.transcription}</Button>
+            <button>{e.transcription}</button>
           </div>
         )
       return (
