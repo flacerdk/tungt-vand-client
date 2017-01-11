@@ -1,3 +1,18 @@
+@import "colors";
+
 .error-panel {
-    padding-top: 10px;
+    border: 1px solid $hopbush;
+    border-radius: 3px;
+
+    div {
+        padding: 5px;
+    }
+
+    .header {
+        background-color: $dawn-pink;
+        border-bottom: 1px solid $hopbush;
+        h3 {
+            margin: 0;
+        }
+    }
 }
